@@ -12,19 +12,23 @@
       <div id="main">
         <div id="menu">This is the Menu</div>
         <div id="songs">These are the songs</div>
+        <div class="song-card">
+          <img
+            class="song-card-image"
+            alt="here supposed to be a picture"
+            src="https://ia803103.us.archive.org/28/items/cd_aladdin-sane_david-bowie_1/cd_aladdin-sane_david-bowie_1_itemimage.png"
+          />
+          <div class="song-card-info">
+            <div class="song-card-artist">Bon Jovi</div>
+            <div class="song-card-album">Album name</div>
+            <div class="song-card-title">
+              Title TitleTitleTitleTitleTitleTitle Title Title Title Title
+            </div>
+          </div>
+        </div>
       </div>
+
       <div id="footer">This will be the player</div>
     </div>
-
-    <script>
-      window.onload = async function () {
-        let bonJoviSongs = await loadSongs("bon_jovi");
-        let songsDiv = document.getElementById("songs");
-
-        bonJoviSongs.forEach(
-          (song) => (songsDiv.innerHTML += `<p>${song.title}</p>`)
-        );
-      };
-    </script>
   </body>
 </html>

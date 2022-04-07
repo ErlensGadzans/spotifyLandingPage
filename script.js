@@ -15,4 +15,11 @@ async function loadSongs(artist) {
   return songsResponse.data;
 }
 
-loadSongs("bon_jovi");
+// window.onload = async function () {
+//   let bonJoviSongs = await loadSongs("bon_jovi");
+//   let songsDiv = document.getElementById("songs");
+
+//   bonJoviSongs.forEach(
+//     (song) => (songsDiv.innerHTML += `<p>${song.title}</p>`)
+//   );
+// };
