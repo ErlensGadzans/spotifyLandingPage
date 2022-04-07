@@ -1,1 +1,18 @@
+async function loadSongs(artist) {
+  let response = await fetch(
+    "https://deezerdevs-deezer.p.rapidapi.com/search?q=" + artist,
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        "X-RapidAPI-Key": "",
+      },
+    }
+  );
 
+  let songsResponse = await response.json();
+  console.log(songsResponse.data);
+  return songsResponse.data;
+}
+
+loadSongs("bon_jovi");
