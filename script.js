@@ -72,13 +72,24 @@ async function renderSongs(artist) {
       let audioPlayer = document.getElementById("audio-player");
       audioPlayer.src = song.preview;
       // console.log(audioPlayer.src, "audio");
-      audioPlayer.play();
+      // audioPlayer.play();
     });
   });
 
   artistSection.appendChild(songsContainer); //adding the songs container to the artist section
 
   songsDiv.appendChild(artistSection); //adding the artist section to the page
+}
+
+async function searchArtist() {
+  //read the value of the search
+  let searchText = document.getElementById("search");
+  let searchValue = searchText.value;
+
+  let songsDiv = document.getElementById("songs");
+  songsDiv.innerHTML = "";
+  //load songs
+  await renderSongs(searchValue);
 }
 
 window.onload = async function () {
