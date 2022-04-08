@@ -57,6 +57,7 @@ async function renderSongs(artist) {
 }
 
 window.onload = async function () {
-  renderSongs("metallica");
+  renderSongs("monster_truck");
   renderSongs("bon_jovi");
+  renderSongs("muse");
 };
