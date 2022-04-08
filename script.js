@@ -57,18 +57,22 @@ async function renderSongs(artist) {
       // console.log("clicked");
       //take reference to player part
       let player = document.getElementById("footer");
+
+      //add the picture to the song
+      //add the title to the song
       player.innerHTML = `
       <div class="player-content">
       <img src="${song.album.cover_medium}"/>
       <div class="player-text">
       <p> ${song.title}</p>
       <h2> ${song.artist.name}</h2>
-      
       </div>
       </div>"`;
-      //add the picture to the song
-      //add the title to the song
-      //play the song
+
+      let audioPlayer = document.getElementById("audio-player");
+      audioPlayer.src = song.preview;
+      // console.log(audioPlayer.src, "audio");
+      audioPlayer.play();
     });
   });
 
@@ -78,7 +82,7 @@ async function renderSongs(artist) {
 }
 
 window.onload = async function () {
-  renderSongs("monster_truck");
-  renderSongs("bon_jovi");
-  renderSongs("muse");
+  renderSongs("monster truck");
+  renderSongs("bon jovi");
+  renderSongs("kid rock");
 };
