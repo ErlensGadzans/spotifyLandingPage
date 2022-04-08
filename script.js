@@ -30,12 +30,14 @@ async function renderSongs(artist) {
   let songsContainer = document.createElement("div"); //creating container for my songs
   songsContainer.classList.add("song-list"); //adding classList for the future needs
 
-  songs.forEach(
-    (song) =>
-      (songsContainer.innerHTML +=
-        //forEach sing I use card, which was made previously
-        `<div class="song-card">
-<img
+  songs.forEach((song) => {
+    let songCard = document.createElement("div");
+    songCard.classList.add("song-card");
+
+    songCard.innerHTML +=
+      //forEach sing I use card, which was made previously
+
+      `<img
   class="song-card-image"
   alt="here supposed to be a picture"
   src ="${song.album.cover_medium}"
@@ -48,8 +50,27 @@ async function renderSongs(artist) {
   </div>
 </div>
 <div class="song-card-play"></div>
-</div>`)
-  );
+`;
+    songsContainer.appendChild(songCard);
+
+    songCard.addEventListener("click", function (element) {
+      // console.log("clicked");
+      //take reference to player part
+      let player = document.getElementById("footer");
+      player.innerHTML = `
+      <div class="player-content">
+      <img src="${song.album.cover_medium}"/>
+      <div class="player-text">
+      <p> ${song.title}</p>
+      <h2> ${song.artist.name}</h2>
+      
+      </div>
+      </div>"`;
+      //add the picture to the song
+      //add the title to the song
+      //play the song
+    });
+  });
 
   artistSection.appendChild(songsContainer); //adding the songs container to the artist section
 
