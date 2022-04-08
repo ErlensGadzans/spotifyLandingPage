@@ -15,11 +15,26 @@ async function loadSongs(artist) {
   return songsResponse.data;
 }
 
-// window.onload = async function () {
-//   let bonJoviSongs = await loadSongs("bon_jovi");
-//   let songsDiv = document.getElementById("songs");
+window.onload = async function () {
+  let bonJoviSongs = await loadSongs("bon_jovi");
+  let songsDiv = document.getElementById("songs");
 
-//   bonJoviSongs.forEach(
-//     (song) => (songsDiv.innerHTML += `<p>${song.title}</p>`)
-//   );
-// };
+  bonJoviSongs.forEach(
+    (song) =>
+      (songsDiv.innerHTML += `<div class="song-card">
+    <img
+      class="song-card-image"
+      alt="here supposed to be a picture"
+      src ="${song.album.cover_medium}"
+    />
+    <div class="song-card-info">
+      <div class="song-card-artist">${song.artist.name}</div>
+      <div class="song-card-album">${song.album.title}</div>
+      <div class="song-card-title">
+        ${song.title}
+      </div>
+    </div>
+    <div class="song-card-play"></div>
+  </div>`)
+  );
+};
