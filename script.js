@@ -72,7 +72,7 @@ async function renderSongs(artist) {
       let audioPlayer = document.getElementById("audio-player");
       audioPlayer.src = song.preview;
       // console.log(audioPlayer.src, "audio");
-      // audioPlayer.play();
+      audioPlayer.play();
     });
   });
 

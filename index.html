@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <title>Spotify Landing Page</title>
@@ -13,8 +19,18 @@
         <div id="menu">
           <img src="./img/logoSpotify.png" alt="Spotify logo" />
           <div class="search-bar">
-            <input type="text" id="search" placeholder="Enter artist" />
-            <input type="button" onclick="searchArtist()" value="Search" />
+            <input
+              class="input-search"
+              type="text"
+              id="search"
+              placeholder="Enter artist"
+            />
+            <input
+              class="search-btn"
+              type="button"
+              onclick="searchArtist()"
+              value="Search"
+            />
           </div>
         </div>
         <div id="songs"></div>
